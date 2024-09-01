@@ -654,6 +654,26 @@ video {
   text-decoration-line: underline;
 }
 
+@media (max-width: 1023px) {
+  .lg\:pb-8 {
+    padding-bottom: 2rem;
+  }
+
+  .lg\:pt-8 {
+    padding-top: 2rem;
+  }
+}
+
+@media (max-width: 639px) {
+  .sm\:pb-4 {
+    padding-bottom: 1rem;
+  }
+
+  .sm\:pt-4 {
+    padding-top: 1rem;
+  }
+}
+
 @media (max-width: 565px) {
   .WRAP\:text-center {
     text-align: center;
