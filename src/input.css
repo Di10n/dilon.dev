@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+@theme {
+    --breakpoint-sm: 639px;
+    --breakpoint-md: 767px;
+    --breakpoint-lg: 1023px;
+    --breakpoint-xl: 1279px;
+    --breakpoint-2xl: 1535px;
+}
+
+@variant sm (@media (width <= theme(--breakpoint-sm)));
+@variant md (@media (width <= theme(--breakpoint-md)));
+@variant lg (@media (width <= theme(--breakpoint-lg)));
+@variant xl (@media (width <= theme(--breakpoint-xl)));
+@variant 2xl (@media (width <= theme(--breakpoint-2xl)));
+
+@font-face {
+    font-family: 'NewYork';
+    src: url('./assets/fonts/NewYork/NewYork.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'NewYork';
+    src: url('./assets/fonts/NewYork/NewYorkItalic.ttf') format('truetype');
+    font-style: italic;
+}
+
+@layer theme {
+    :root {
+        --font-serif: 'NewYork', serif;
+    }
+}
+
+@layer utilities {
+    @keyframes move-up {
+        from {
+            transform: translateY(16px);
+        }
+        to {
+            transform: translateY(0);
+        }
+    }
+    @keyframes fade {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    @keyframes blur {
+        from {
+            filter: blur(5px);
+        }
+        to {
+            filter: blur(0);
+        }
+    }
+    .animate-1a {
+        animation: 
+            move-up 2000ms cubic-bezier(0.87, 0, 0.13, 1) 250ms both,
+            fade 1000ms linear 250ms both,
+            blur 1000ms linear 250ms both;
+        will-change: transform, opacity, filter;
+    }
+    .animate-1b {
+        animation: 
+            blur 2000ms linear 0ms both;
+        will-change: opacity, filter;
+    }
+    .animate-2 {
+        animation: 
+            move-up 2000ms cubic-bezier(0.87, 0, 0.13, 1) 2250ms both,
+            fade 1000ms linear 2250ms both,
+            blur 1000ms linear 2250ms both;
+        will-change: transform, opacity, filter;
+    }
+    .animate-3 {
+        animation: 
+            move-up 2000ms cubic-bezier(0.87, 0, 0.13, 1) 3250ms both,
+            fade 1000ms linear 3250ms both,
+            blur 1000ms linear 3250ms both;
+        will-change: transform, opacity, filter;
+    }
+    .animate-5a {
+        animation: 
+            fade 750ms linear 4250ms both,
+            blur 750ms linear 4250ms both;
+        will-change: opacity, filter;
+    }
+    .animate-5b {
+        animation: 
+            fade 750ms ease-in 4250ms both,
+            blur 750ms linear 4250ms both;
+        will-change: opacity, filter;
+    }
+}

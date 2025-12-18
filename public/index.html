@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dilon Chugh</title>
+    <link rel="stylesheet" href="./output.css">
+</head>
+<body class="bg-neutral-950 text-neutral-100 font-serif flex flex-col h-dvh mx-16 sm:mx-16">
+    <nav class="flex flex-row justify-center space-x-8 my-16 animate-5a sm:my-6">
+        <a href="index.html" id="home-link" class="hover:text-neutral-300 duration-250 underline decoration-2 underline-offset-4">Home</a>
+        <a href="projects.html" class="hover:text-neutral-300 underline decoration-transparent hover:decoration-current transition-colors duration-250 decoration-2 underline-offset-4">Projects</a>
+        <!-- <a href="index.html" class="hover:text-neutral-300 underline decoration-transparent hover:decoration-current transition-colors duration-250 decoration-2 underline-offset-4">Taste</a>
+        <a href="index.html" class="hover:text-neutral-300 underline decoration-transparent hover:decoration-current transition-colors duration-250 decoration-2 underline-offset-4">Writing</a> -->
+    </nav>
+    <div class="flex flex-1 flex-row items-center justify-center space-x-8 sm:flex-col sm:space-y-4 sm:space-x-0">
+        <img src="assets/images/profile.webp" alt="Profile photo" class="w-48 h-48 animate-1b">
+        <div class="flex flex-col space-y-4">
+            <div class="text-[32px] italic animate-1a sm:text-center">Hi, I'm Dilon!</div>
+            <div class="max-w-[52ch] animate-2">
+                I'm currently studying math and philosophy at Stanford.
+                In the past I've worked as a software engineer, as well as on AI safety projects.
+                I also enjoy photography, meditation, and spontaneous travel.
+            </div>
+            <div class="animate-3">
+                Feel free to reach out at <a href="mailto:hello@dilon.dev" class="inline text-blue-400 hover:text-blue-600 duration-250 underline decoration-transparent hover:decoration-blue-600 transition-colors decoration-2 underline-offset-4">hello@dilon.dev</a>!
+            </div>
+        </div>
+    </div>
+    <div class="flex flex-row space-x-8 justify-center my-16 animate-5b sm:my-6">
+        <a href="https://github.com/Di10n" target="_blank">
+            <svg class="w-12 h-12 text-neutral-200 hover:text-neutral-400 duration-250">
+                <use href="./assets/images/github-icon.svg#github-icon"></use>
+            </svg>
+        </a>
+        <a href="https://www.linkedin.com/in/dilon-chugh" target="_blank">
+            <svg class="w-12 h-12 text-neutral-200 hover:text-neutral-400 duration-250">
+                <use href="./assets/images/linkedin-icon.svg#linkedin-icon"></use>
+            </svg>
+        </a>
+        <a href="./assets/files/resume.pdf" target="_blank">
+            <svg class="w-12 h-12 text-neutral-200 hover:text-neutral-400 duration-250">
+                <use href="./assets/images/resume-icon.svg#resume-icon"></use>
+            </svg>
+        </a>
+    </div>
+    <script>
+        if (sessionStorage.getItem('skipAnimations')) {
+            document.querySelectorAll('[class*="animate-"]').forEach(el => {
+                el.style.animation = 'none';
+            });
+            sessionStorage.removeItem('skipAnimations');
+        }
+        document.getElementById('home-link').addEventListener('click', () => {
+            sessionStorage.setItem('skipAnimations', 'true');
+        });
+    </script>
+</body>
+</html>
